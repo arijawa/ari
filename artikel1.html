@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.84.0" />
+    <title>Blog Template · Bootstrap v5.0</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/blog/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <meta name="theme-color" content="#7952b3" />
+
+    <style>
+      /* stylelint-disable selector-list-comma-newline-after */
+
+      .blog-header {
+        line-height: 1;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .blog-header-logo {
+        font-family: "Playfair Display", Georgia, "Times New Roman",
+          serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+        font-size: 2.25rem;
+      }
+
+      .blog-header-logo:hover {
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display", Georgia, "Times New Roman",
+          serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+      }
+
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      @media (min-width: 768px) {
+        .display-4 {
+          font-size: 3rem;
+        }
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-scroller .nav-link {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        font-size: 0.875rem;
+      }
+
+      .card-img-right {
+        height: 100%;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .flex-auto {
+        flex: 0 0 auto;
+      }
+
+      .h-250 {
+        height: 250px;
+      }
+      @media (min-width: 768px) {
+        .h-md-250 {
+          height: 250px;
+        }
+      }
+
+      /* Pagination */
+      .blog-pagination {
+        margin-bottom: 4rem;
+      }
+      .blog-pagination > .btn {
+        border-radius: 2rem;
+      }
+
+      /*
+ * Blog posts
+ */
+      .blog-post {
+        margin-bottom: 4rem;
+      }
+      .blog-post-title {
+        margin-bottom: 0.25rem;
+        font-size: 2.5rem;
+      }
+      .blog-post-meta {
+        margin-bottom: 1.25rem;
+        color: #727272;
+      }
+
+      /*
+ * Footer
+ */
+      .blog-footer {
+        padding: 2.5rem 0;
+        color: #727272;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-top: 0.05rem solid #e5e5e5;
+      }
+      .blog-footer p:last-child {
+        margin-bottom: 0;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="">
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center text-dark text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="32"
+              class="me-2"
+              viewBox="0 0 118 94"
+              role="img"
+            >
+              <title>Bootstrap</title>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span class="fs-4">ARI YOSIM JAWA -WEB </span>
+          </a>
+
+          <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a
+              class="me-3 py-2 text-dark text-decoration-none"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="me-3 py-2 text-dark text-decoration-none"
+              href="profile.html"
+              >Profile</a
+            >
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main class="container">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        <a
+          href="https://www.cloudcomputing.id/berita/5-tren-cloud-computing-tahun-2021"
+        >
+          SUMBER ARTIKEL</a
+        >
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">
+          5 Hal Ini Bakal Jadi Tren Terbesar Cloud Computing Tahun 2021
+        </h2>
+
+        <div class="cc-news-content">
+          <p style="text-align: justify">
+            Kondisi di tahun 2020 ini membuat prediksi di tahun 2021 nanti mudah
+            untuk ditebak. Tren teratas seperti
+            <em>artificial intelliigence</em> (AI) dan
+            <em>internet of things</em> (IoT) akan tetap menjadi teknologi yang
+            memberi ketentuan dalam membentuk kehidupan kita. Hal signifikan
+            untuk menerapkan pemanfaatan teknologi sekarang ini pun merujuk pada
+            adaptasi untuk bertahan di masa pandemi.
+          </p>
+          <p style="text-align: justify">
+            Perubahan signifikan untuk bertahan di masa pandemi saat ini sangat
+            cocok dengan <em>cloud computing</em>.
+            <em>Cloud computing</em> adalah <em>backbone</em> dari ekosistem
+            teknologi bersifat <em>data-driven</em> dan <em>app-based</em> yang
+            sangat penting untuk membantu kita menata perubahan saat ini.
+          </p>
+          <p style="text-align: justify">
+            Layanan <em>cloud computing</em> sendiri membantu berbagai hal mulai
+            dari pelacakan pengiriman logistik, <em>remote medicine</em> hingga
+            bekerja dan bermain dari rumah. <em>Cloud computing</em> telah
+            melakukan revolusi pada berbagai bidang.
+          </p>
+          <p style="text-align: justify">
+            Sepanjang 2021 nanti, kita bisa berekspetasi untuk melihat
+            perkembangan revolusi teknologi oleh <em>cloud computing</em>. Hal
+            ini juga seiring dengan berbagai usaha bisnis yang terus beradaptasi
+            dengan mengadopsi teknologi <em>cloud</em>. Berikut tren
+            <em>cloud computing</em> yang akan ‘bermain’ di tahun 2021
+            mendatang.
+          </p>
+          <ol style="text-align: justify">
+            <li>
+              <strong
+                >Pendekatan <em>multi-cloud</em> akan menghancurkan batasan
+                antar <em>provider</em></strong
+              >
+            </li>
+          </ol>
+          <p style="text-align: justify">
+            Saat ini, para <em>provider</em> <em>cloud</em> besar seperti
+            Amazon, Microsoft, Google dan lainnya mengambil pendekatan pada
+            batasan dari layanan yang mereka berikan. Hal ini didorong dengan
+            model bisnis mereka yang melibatkan promosi <em>platform</em> yang
+            dimiliki sebagai <em>one-stop-shops</em> yang meng-<em>cover</em>
+            semua kebutuhan <em>cloud</em> perusahaan, data, serta komputasi.
+          </p>
+          <p style="text-align: justify">
+            Namun dalam praktiknya, industri secara meningkat banyak merubah
+            <em>platform</em> ke arah lingkungan <em>hybrid</em> atau
+            <em>multi-cloud</em> dengan ketentuan untuk infrastruktur
+            diluncurkan melalui pada model.
+          </p>
+          <p style="text-align: justify">
+            Hal ini menunjukkan bahwa ada ‘panggilan’ bagi para
+            <em>provider</em> besar untuk menciptakan jembatan antar
+            <em>platform</em> yang mereka miliki. Jembatan ini kontras dengan
+            model bisnis mereka yang bergantung pada kemampuan untuk menjual
+            lebih banyak kapasitas <em>cloud</em> serta layanan lainnya untuk
+            pelanggan.
+          </p>
+          <p style="text-align: justify">
+            Mengadopsi pendekatan yang lebih kolaboratif tidak hanya
+            memungkinkan pelanggan untuk memiliki keuntungan lebih besar dalam
+            tren <em>multi-cloud</em> yang berkembang pesat, tetapi juga
+            menguntungkan para organisasi dalam rantai <em>supply</em> mereka.
+            Hal ini berarti rantai<em> supply</em>
+            akan bekerja pada berbagai standar aplikasi dan data.
+          </p>
+          <p style="text-align: justify">
+            Pendekatan ini menjadi hal yang bisa dilihat perkembangan inovasinya
+            pada berbagai level, misalnya <em>startup</em> yang membuat layanan
+            untuk membuat proses operasi antar <em>platform cloud</em> publik
+            menjadi lebih simpel.
+          </p>
+          <ol style="text-align: justify" start="2">
+            <li>
+              <strong
+                >AI akan memperbaiki kecepatan dan efisiensi
+                <em>cloud computing</em></strong
+              >
+            </li>
+          </ol>
+          <p style="text-align: justify">
+            Sepanjang <em>cloud</em> berjalan. AI (<em
+              >artificial intelligence</em
+            >) adalah <em>key enabler</em> pada berbagai jalan tersebut. Kita
+            bisa berekspetasi teknologi untuk beradaptasi dengan kebutuhan kita
+            pada 2021.
+          </p>
+          <p style="text-align: justify">
+            Berbagai <em>platform</em> berbasis <em>cloud</em> dengan layanan
+            <em>as-as-service</em> membuat pengguna dengan berbagai kepemilikan
+            biaya dan berbagai kemampuan untuk mengakses fungsi
+            <em>machine learning</em> seperti alat pengenalan gambar,
+            <em>language processing</em>, serta mesin rekomendasi.
+          </p>
+          <p style="text-align: justify">
+            <em>Cloud</em> memungkinkan untuk terus mendorong revolusi atas
+            alat-alat yang disebutkan sebelumnya agar lebih terbuka dan menyebar
+            oleh perusahaan berbagai ukuran dan di berbagai bidang. Hal ini bisa
+            berujung pada produktivitas dan efisiensi yang meningkat.
+          </p>
+          <p style="text-align: justify">
+            Kendaraan otomatis, infastruktur <em>smart city</em>, serta
+            perencanaan respon terhadap pandemi adalah conto bidang penelitian
+            yang bisa terpengaruh algritma lebih pintar yang diperoleh dari
+            kiriman melalui layanan <em>cloud</em>. Algoritma AI bisa
+            mengoptimalisasi kecepatan dan efisiensi serta meminimalisasi
+            dampaknya terhadap lingkungan.
+          </p>
+          <ol style="text-align: justify" start="3">
+            <li>
+              <strong><em>Gaming</em></strong
+              ><strong>
+                akan semakin dikirimkan dari <em>cloud</em>, seperti musik dan
+                film</strong
+              >
+            </li>
+          </ol>
+          <p style="text-align: justify">
+            Amazon baru saja bergabung dalam peringkat raksasa teknologi dan
+            <em>startup</em> yang menawarkan <em>platform</em> mereka untuk
+            <em>cloud gaming</em>. Sama seperti <em>platform</em> sebelumnya
+            untuk <em>streaming</em> musik dan film,
+            <em>cloud gaming</em> menjanjikan untuk merevolusi cara kita
+            mengkonsumsi layanan hiburan dengan cepat dan mudah.
+          </p>
+          <p style="text-align: justify">
+            <em>Cloud gaming</em> menawarkan layanan konsumsi hiburan yang cepat
+            dan mudah dengan akses instan ke <em>library</em> besar berisi
+            berbagi <em>game</em> yang dapat diakses dengan langganan per bulan.
+            Tahun 2020, layanan seperti ini telah diluncurkan oleh Google,
+            Microsoft, dan Nvidia, sedangkan Sony sudah menyediakannya pada
+            beberapa tahun terakhir.
+          </p>
+          <p style="text-align: justify">
+            Meskipun konsol <em>game</em> seperti Xbox dan Playstation terus
+            dikembangkan dan berharga sekitar $500, para ahli industri
+            memprediksi bahwa ada masa di mana kita perlu untuk menghabiskan
+            ratusan dollar untuk membeli konsol baru setiap beberapa tahun untuk
+            tetap bisa memainkan <em>game</em> terbaru, yang mungkin saat ini
+            mulai terjadi.
+          </p>
+          <ol style="text-align: justify" start="4">
+            <li>
+              <strong
+                >Solusi <em>hybrid</em> dan <em>on-premise</em>
+                <em>cloud </em>semakin popule</strong
+              >
+            </li>
+          </ol>
+          <p>
+            Bagi berbagai organisasi, memilih antara <em>public</em>,
+            <em>private</em>, atau <em>hybrid</em> <em>cloud</em> telah
+            dibuktikan menantang bagi mereka. Setiap jalur <em>cloud</em> yang
+            dipilih memiliki keuntungan dan kerugiannya masing-masing dalm hal
+            fleksibilitas, <em>performance</em>, keamanan, serta penyesuaian.
+          </p>
+          <p style="text-align: justify">
+            Namun, dengan ekosistem <em>cloud</em> yang semakin matang maka
+            banyak dari organisasi-organisasi tersebut yang menemukan jika tidak
+            ada solusi yang bisa mencegah semua kerugian yang ada di berbagai
+            model <em>cloud</em> tersebut.
+          </p>
+          <p style="text-align: justify">
+            Selain itu, lingkungan <em>hybrid</em> atau <em>multi-cloud</em> di
+            mana pengguna mengambil dan memilih elemen individual dari layanan
+            <em>provider</em> yang sesuai dengan kebutuhan pribadi semakin
+            populer. Hal ini mendorong situasi di mana para
+            <em>provider</em> tersebut mulai menilik kembali model pengiriman
+            mereka.
+          </p>
+          <p style="text-align: justify">
+            Sebagai contoh, Amazon dan Google secara tradisional telah menjadi
+            pemimpin pasar yang bergantung pada penjualan ruang pelanggan mereka
+            di <em>platform public cloud</em>, sedangkan Microsoft dan IBM lebih
+            fleksibel dengan memungkinkan pengguna untuk menjalankan
+            <em>cloud tools</em> dan berbagai teknologi lintas keberadaan serta
+            jaringan <em>on-premise</em>.
+          </p>
+          <p style="text-align: justify">
+            Berdasarkan contoh tersebut, terlihat bahwa
+            <em>provider</em>-<em>provider</em> tersebut telah membangkitkan
+            kebutuhan untuk <em>platform</em> yang berbeda serta pendekatan
+            dalam organisasi.
+          </p>
+          <p style="text-align: justify">
+            Pendekatan dalam organisasi, mungkin seperti memanfaatkan
+            <em>public cloud</em> untuk menyediakan pengiriman konten selagi
+            menyimpan serta memproses data pelanggan serta informasi terkontrol
+            lainnya melalui berbagai solusi <em>private</em> atau
+            <em>on-premise</em>.
+          </p>
+          <p style="text-align: justify">
+            Nantinya juga akan ada peningkatan permintaan untuk lahan
+            <em>cloud</em> ‘mentah’ serta kekuatan komputasi di mana usaha
+            bisnis bisa dengan mudah ‘mengangkat’ dan ‘memindahkan’ sistem
+            mereka yang tersedia ke <em>cloud</em> tanpa perlu mengadaptasi data
+            tersebut dengan menjalankan <em>software</em> yang sudah di-<em
+              >install</em
+            >
+            sebelumnya atau melalui layanan lain.
+          </p>
+          <ol style="text-align: justify" start="5">
+            <li>
+              <strong
+                >Banyak dari kita akan bekerja di
+                <em>Virtual Cloud Dekstop</em></strong
+              >
+            </li>
+          </ol>
+          <p style="text-align: justify">
+            <em>Virtual Cloud Dekstop</em> pada dasarnya adalah komputasi di
+            mana seluruh lingkungan dari <em>workstation</em> kita dikirim
+            sebagai layanan <em>cloud</em> ke laptop atau layar
+            <em>dekstop</em> tempat kita bekerja.
+          </p>
+          <p style="text-align: justify">
+            Hal ini berarti, organisasi-organisasi bisa mengambil keuntungan
+            dari langganan per jam ketika karyawan mereka menghabiskan waktu
+            untuk bekerja di mesin mereka, mengeliminiasi biaya pembaruan
+            <em>hardware</em> serta keharusan untuk membuang teknologi yang
+            mubazir.
+          </p>
+          <p style="text-align: justify">
+            Terkadang dikenal sebagai <em>dekstop-as-as-a-service</em>, model
+            komputasi ini ditawarkan oleh Amazon melalui
+            <em>platform</em> Workspaces, dan Microsoft dengan Windows Virtual
+            Dekstop. Google juga menawarkan fungsionalitas ini melalui perangkat
+            Chromebook mereka.
+          </p>
+          <p style="text-align: justify">
+            Pada praktiknya, layanan ini bisa meningkatkan efisiensi lintas
+            tenaga kerja dengan memastikan setiap karyawan menggunakan teknologi
+            yang sinkron dan terbaru. Layanan juga memberikan keuntungan pada
+            keamanan, dikarenakan semua perangkat bisa dikelola secara
+            <em>centralized</em>, dibandingkan harus memastikan semua orang di
+            jaringan mengikuti.
+          </p>
+          <p style="text-align: justify">
+            Ketika karyawan bergabung atau pun meninggalkan perusahaan, biaya
+            yang terambil secara sederhana hanya perlu dilihat dari jumlah jam
+            yang dihabiskan untuk menggunakan <em>platform</em>, baik menurun
+            atau meningkat.
+          </p>
+          <p style="text-align: justify">
+            Fungsi fleksibel ini menunjukkan,
+            <em>virtual dekstop services</em> kemungkinan akan semakin populer
+            di beberapa tahun mendatang.
+          </p>
+          <p style="text-align: justify">
+            Berdasarkan lima tren <em>cloud computing</em> tersebut, maka kita
+            bisa melihat bahwa layanan ini akan semakin populer di beberapa
+            tahun mendatang, serta dapat membantu dalam berbagai bidang.
+            <em>Cloud computing</em> sendiri hanya merupakan satu dari 25 tren
+            teknologi lainnya yang akan merubah masyarakat ke depannya, terutama
+            dengan memasuki industri 4.0 saat ini.
+          </p>
+        </div>
+      </article>
+      <footer class="pt-3 text-muted border-top">&copy; 2021</footer>
+    </main>
+  </body>
+</html>
